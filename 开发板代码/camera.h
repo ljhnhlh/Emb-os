@@ -18,7 +18,7 @@
 #include <QImage>
 #include <QThread>
 
-#define CAMERA_FILE "/dev/video0"
+#define CAMERA_FILE "/dev/video9"
 #define V4L_BUFFERS_DEFAULT     4
 #define V4L_BUFFERS_MAX		32
 

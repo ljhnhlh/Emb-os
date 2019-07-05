@@ -22,6 +22,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::display() {
+    isrunning = true;
     if (isrunning) {
         ui->label->setPixmap(QPixmap::fromImage(*camera->img));
         char* bits = (char*) camera->img->bits();
@@ -29,13 +30,23 @@ void MainWindow::display() {
         for (int i = 0; i < 200 * 200 * 3; i += 1023) {
             socket->writeDatagram(bits+i, (200*200*3-i) > 1023 ? 1023: (200*200*3-i), QHostAddress("192.168.0.205"), 8080);
         }
+        camera->img->save("./1.png");
+    }
+    QImage *t = new QImage("test.png");
+    if(!t->isNull())
+    {
+        ui->img->setPixmap(QPixmap::fromImage(*t));
+    }
+    else{
+        std::cout << "no Image" << endl;
     }
 }
 
 void MainWindow::initSocket() {
     socket = new QUdpSocket(this);
-    socket->bind(QHostAddress("127.0.0.1"), 3000);
+    socket->bind(QHostAddress("127.0.0.1"), 8080);
     connect(socket, SIGNAL(readyRead()), this, SLOT(process()));
+
 }
 
 void MainWindow::process() {

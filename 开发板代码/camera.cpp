@@ -23,6 +23,7 @@
 #include "camera.h"
 #include <QImage>
 
+
 Camera::Camera(): _width(200), _height(200), img(new QImage(_width, _height, QImage::Format_RGB888)) {
     int ret;
     /* V4L */
@@ -38,7 +39,6 @@ Camera::Camera(): _width(200), _height(200), img(new QImage(_width, _height, QIm
     video_set_input(dev, 0);
 
     video_set_format(dev, width, height, pixelformat);
-
 
     /* Allocate buffers. */
     nbufs = video_reqbufs(dev, nbufs);
@@ -166,6 +166,7 @@ void Camera::convert_to_rgb24(unsigned char *buf, unsigned char *rgb, int width,
 
 int Camera::video_open(const char *devname)
 {
+
     struct v4l2_capability cap;
     int dev, ret;
 

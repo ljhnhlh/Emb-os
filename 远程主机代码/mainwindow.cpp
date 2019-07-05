@@ -16,11 +16,11 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::pause() {
-    socket->writeDatagram("pause", QHostAddress("127.0.0.1"), 3000);
+    socket->writeDatagram("pause", QHostAddress("192.168.0.101"), 8080);
 }
 
 void MainWindow::begin() {
-    socket->writeDatagram("begin", QHostAddress("127.0.0.1"), 3000);
+    socket->writeDatagram("begin", QHostAddress("192.168.0.101"), 8080);
 }
 
 void MainWindow::screenshot() {

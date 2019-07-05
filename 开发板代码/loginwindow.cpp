@@ -11,6 +11,7 @@
 #include <QDateTime>
 #include <QDebug>
 
+
 LoginWindow::LoginWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LoginWindow)
