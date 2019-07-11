@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 QApplication a(argc, argv);
 
 //LoginWindow w;
-MainWindow w;
+LoginWindow w;
 w.show();
 return a.exec();
 

@@ -22,9 +22,11 @@ private slots:
 private:
     Camera* camera;
     QUdpSocket* socket;
+    QUdpSocket* socket2;
     Ui::MainWindow *ui;
     void initSocket();
     bool isrunning;
+    bool isok;
 };
 
-#endif // MAINWINDOW_H
+#endif // isok

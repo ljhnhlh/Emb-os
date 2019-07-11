@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Thu Jul 11 10:20:56 2019
+** Created: Thu Jul 11 12:17:08 2019
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -41,25 +41,25 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(511, 391);
+        MainWindow->resize(1000, 600);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         pauseButton = new QPushButton(centralWidget);
         pauseButton->setObjectName(QString::fromUtf8("pauseButton"));
-        pauseButton->setGeometry(QRect(370, 110, 113, 32));
+        pauseButton->setGeometry(QRect(700, 100, 113, 32));
         beginButton = new QPushButton(centralWidget);
         beginButton->setObjectName(QString::fromUtf8("beginButton"));
-        beginButton->setGeometry(QRect(370, 40, 113, 32));
+        beginButton->setGeometry(QRect(700, 50, 113, 32));
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(80, 40, 640, 480));
+        label->setGeometry(QRect(40, 0, 640, 480));
         screenButton = new QPushButton(centralWidget);
         screenButton->setObjectName(QString::fromUtf8("screenButton"));
-        screenButton->setGeometry(QRect(370, 180, 113, 32));
+        screenButton->setGeometry(QRect(700, 170, 113, 32));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 511, 23));
+        menuBar->setGeometry(QRect(0, 0, 1000, 23));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));

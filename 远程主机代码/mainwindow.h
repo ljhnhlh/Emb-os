@@ -20,11 +20,13 @@ public slots:
     void begin();
     void display();
     void screenshot();
+    void reply();
 private:
     QUdpSocket* socket;
     QImage* img;
     Ui::MainWindow *ui;
     void initSocket();
+    bool isok;
 
 };
 

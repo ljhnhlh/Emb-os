@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'loginwindow.ui'
 **
-** Created: Sun Jun 30 12:07:05 2019
+** Created: Thu Jul 11 12:40:32 2019
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -14,6 +14,7 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QGridLayout>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
@@ -44,6 +45,20 @@ public:
     QHBoxLayout *horizontalLayout_2;
     QPushButton *confirm_btn;
     QPushButton *switch_btn;
+    QWidget *gridLayoutWidget;
+    QGridLayout *gridLayout;
+    QPushButton *btn5;
+    QPushButton *btn4;
+    QPushButton *btn1;
+    QPushButton *btn7;
+    QPushButton *btn2;
+    QPushButton *btn9;
+    QPushButton *btn3;
+    QPushButton *btn8;
+    QPushButton *btn0;
+    QPushButton *btn6;
+    QPushButton *btn_delete;
+    QPushButton *btn_clear;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -52,7 +67,7 @@ public:
     {
         if (LoginWindow->objectName().isEmpty())
             LoginWindow->setObjectName(QString::fromUtf8("LoginWindow"));
-        LoginWindow->resize(400, 300);
+        LoginWindow->resize(607, 300);
         LoginWindow->setInputMethodHints(Qt::ImhNone);
         centralWidget = new QWidget(LoginWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
@@ -120,10 +135,78 @@ public:
 
         verticalLayout->addLayout(horizontalLayout_2);
 
+        gridLayoutWidget = new QWidget(centralWidget);
+        gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
+        gridLayoutWidget->setGeometry(QRect(290, 40, 302, 161));
+        gridLayout = new QGridLayout(gridLayoutWidget);
+        gridLayout->setSpacing(6);
+        gridLayout->setContentsMargins(11, 11, 11, 11);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        gridLayout->setContentsMargins(0, 0, 0, 0);
+        btn5 = new QPushButton(gridLayoutWidget);
+        btn5->setObjectName(QString::fromUtf8("btn5"));
+
+        gridLayout->addWidget(btn5, 1, 1, 1, 1);
+
+        btn4 = new QPushButton(gridLayoutWidget);
+        btn4->setObjectName(QString::fromUtf8("btn4"));
+
+        gridLayout->addWidget(btn4, 1, 0, 1, 1);
+
+        btn1 = new QPushButton(gridLayoutWidget);
+        btn1->setObjectName(QString::fromUtf8("btn1"));
+
+        gridLayout->addWidget(btn1, 0, 0, 1, 1);
+
+        btn7 = new QPushButton(gridLayoutWidget);
+        btn7->setObjectName(QString::fromUtf8("btn7"));
+
+        gridLayout->addWidget(btn7, 2, 0, 1, 1);
+
+        btn2 = new QPushButton(gridLayoutWidget);
+        btn2->setObjectName(QString::fromUtf8("btn2"));
+
+        gridLayout->addWidget(btn2, 0, 1, 1, 1);
+
+        btn9 = new QPushButton(gridLayoutWidget);
+        btn9->setObjectName(QString::fromUtf8("btn9"));
+
+        gridLayout->addWidget(btn9, 2, 2, 1, 1);
+
+        btn3 = new QPushButton(gridLayoutWidget);
+        btn3->setObjectName(QString::fromUtf8("btn3"));
+
+        gridLayout->addWidget(btn3, 0, 2, 1, 1);
+
+        btn8 = new QPushButton(gridLayoutWidget);
+        btn8->setObjectName(QString::fromUtf8("btn8"));
+
+        gridLayout->addWidget(btn8, 2, 1, 1, 1);
+
+        btn0 = new QPushButton(gridLayoutWidget);
+        btn0->setObjectName(QString::fromUtf8("btn0"));
+
+        gridLayout->addWidget(btn0, 3, 1, 1, 1);
+
+        btn6 = new QPushButton(gridLayoutWidget);
+        btn6->setObjectName(QString::fromUtf8("btn6"));
+
+        gridLayout->addWidget(btn6, 1, 2, 1, 1);
+
+        btn_delete = new QPushButton(gridLayoutWidget);
+        btn_delete->setObjectName(QString::fromUtf8("btn_delete"));
+
+        gridLayout->addWidget(btn_delete, 3, 2, 1, 1);
+
+        btn_clear = new QPushButton(gridLayoutWidget);
+        btn_clear->setObjectName(QString::fromUtf8("btn_clear"));
+
+        gridLayout->addWidget(btn_clear, 3, 0, 1, 1);
+
         LoginWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(LoginWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 400, 23));
+        menuBar->setGeometry(QRect(0, 0, 607, 23));
         LoginWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(LoginWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -146,6 +229,18 @@ public:
         passwd_text->setText(QString());
         confirm_btn->setText(QApplication::translate("LoginWindow", "Confirm", 0, QApplication::UnicodeUTF8));
         switch_btn->setText(QApplication::translate("LoginWindow", "Switch to Login", 0, QApplication::UnicodeUTF8));
+        btn5->setText(QApplication::translate("LoginWindow", "5", 0, QApplication::UnicodeUTF8));
+        btn4->setText(QApplication::translate("LoginWindow", "4", 0, QApplication::UnicodeUTF8));
+        btn1->setText(QApplication::translate("LoginWindow", "1", 0, QApplication::UnicodeUTF8));
+        btn7->setText(QApplication::translate("LoginWindow", "7", 0, QApplication::UnicodeUTF8));
+        btn2->setText(QApplication::translate("LoginWindow", "2", 0, QApplication::UnicodeUTF8));
+        btn9->setText(QApplication::translate("LoginWindow", "9", 0, QApplication::UnicodeUTF8));
+        btn3->setText(QApplication::translate("LoginWindow", "3", 0, QApplication::UnicodeUTF8));
+        btn8->setText(QApplication::translate("LoginWindow", "8", 0, QApplication::UnicodeUTF8));
+        btn0->setText(QApplication::translate("LoginWindow", "0", 0, QApplication::UnicodeUTF8));
+        btn6->setText(QApplication::translate("LoginWindow", "6", 0, QApplication::UnicodeUTF8));
+        btn_delete->setText(QApplication::translate("LoginWindow", "delete", 0, QApplication::UnicodeUTF8));
+        btn_clear->setText(QApplication::translate("LoginWindow", "clear", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

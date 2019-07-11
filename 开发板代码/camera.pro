@@ -5,7 +5,8 @@
 #-------------------------------------------------
 
 QT       += core gui network
-QT      += sql
+#QT +=   sql
+LIBS += -lsqlite3
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
