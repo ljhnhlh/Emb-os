@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Fri Jul 5 17:57:11 2019
+** Created: Thu Jul 11 10:20:56 2019
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -52,14 +52,14 @@ public:
         beginButton->setGeometry(QRect(370, 40, 113, 32));
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(80, 40, 200, 200));
+        label->setGeometry(QRect(80, 40, 640, 480));
         screenButton = new QPushButton(centralWidget);
         screenButton->setObjectName(QString::fromUtf8("screenButton"));
         screenButton->setGeometry(QRect(370, 180, 113, 32));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 511, 22));
+        menuBar->setGeometry(QRect(0, 0, 511, 23));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));

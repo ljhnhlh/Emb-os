@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Sun Jun 30 12:07:05 2019
+** Created: Thu Jul 11 10:12:24 2019
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -47,7 +47,7 @@ public:
         widget->setGeometry(QRect(270, 150, 120, 80));
         label = new QLabel(centralWidget);
         label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(10, 0, 200, 200));
+        label->setGeometry(QRect(10, 0, 640, 480));
         img = new QLabel(centralWidget);
         img->setObjectName(QString::fromUtf8("img"));
         img->setGeometry(QRect(350, 20, 241, 171));

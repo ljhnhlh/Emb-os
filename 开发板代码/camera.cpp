@@ -21,15 +21,16 @@
 //#undef V4L2_BUF_TYPE_VIDEO_CAPTURE
 //#define V4L2_BUF_TYPE_VIDEO_CAPTURE 9
 #include "camera.h"
+#include <iostream>
 #include <QImage>
 
 
-Camera::Camera(): _width(200), _height(200), img(new QImage(_width, _height, QImage::Format_RGB888)) {
+Camera::Camera(): _width(640), _height(480), img(new QImage(_width, _height, QImage::Format_RGB888)) {
     int ret;
     /* V4L */
     unsigned int pixelformat = V4L2_PIX_FMT_YUYV;
-    unsigned int width = 200;
-    unsigned int height = 200;
+    unsigned int width = 640;
+    unsigned int height = 480;
     int nbufs = V4L_BUFFERS_DEFAULT;
     struct v4l2_buffer buf;
 
@@ -110,19 +111,37 @@ void Camera::yuv_to_rgb24(unsigned char y,
 {
     register int r,g,b;
 
-    r = (1192 * (y - 16) + 1634 * (v - 128) ) >> 10;
-    g = (1192 * (y - 16) - 833 * (v - 128) - 400 * (u -128) ) >> 10;
-    b = (1192 * (y - 16) + 2066 * (u - 128) ) >> 10;
+//    r = (1192 * (y - 16) + 1634 * (v - 128) ) >> 10;
+//    g = (1192 * (y - 16) - 833 * (v - 128) - 400 * (u -128) ) >> 10;
+//    b = (1192 * (y - 16) + 2066 * (u - 128) ) >> 10;
 
-    r = r > 255 ? 255 : r < 0 ? 0 : r;
-    g = g > 255 ? 255 : g < 0 ? 0 : g;
-    b = b > 255 ? 255 : b < 0 ? 0 : b;
+//    r = r > 255 ? 255 : r < 0 ? 0 : r;
+//    g = g > 255 ? 255 : g < 0 ? 0 : g;
+//    b = b > 255 ? 255 : b < 0 ? 0 : b;
 
-    *rgb = (unsigned char)b;
-    rgb++;
-    *rgb = (unsigned char)g;
-    rgb++;
-    *rgb = (unsigned char)r;
+//    *rgb = (unsigned char)b;
+//    rgb++;
+//    *rgb = (unsigned char)g;
+//    rgb++;
+//    *rgb = (unsigned char)r;
+
+    r = y + (1.370705 * (v-128));
+    g = y - (0.698001 * (v-128)) - (0.337633 *(u-128));
+    b = y + (1.732446 * (u-128));
+    if(r > 255)
+        r = 255;
+    if(g > 255)
+        g = 255;
+    if(b > 255)
+        b = 255;
+    if (r < 0) r = 0;
+    if (g < 0) g = 0;
+    if (b < 0) b = 0;
+
+    rgb[0] = r * 220 / 256;
+    rgb[1] = g * 220 / 256;
+    rgb[2] = b * 220 / 256;
+//    std::cout << "rgb"  << std::endl;
 }
 
 void Camera::convert_to_rgb16(unsigned char *buf, unsigned char *rgb, int width, int height)

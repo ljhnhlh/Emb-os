@@ -22,15 +22,18 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::display() {
-    isrunning = true;
+//    isrunning = true;
+    int tt = 0;
     if (isrunning) {
         ui->label->setPixmap(QPixmap::fromImage(*camera->img));
         char* bits = (char*) camera->img->bits();
         // QByteArray data = QByteArray(bits, 200 * 200 * 3);
-        for (int i = 0; i < 200 * 200 * 3; i += 1023) {
-            socket->writeDatagram(bits+i, (200*200*3-i) > 1023 ? 1023: (200*200*3-i), QHostAddress("192.168.0.205"), 8080);
+        for (int i = 0; i < 640 * 480 * 3; i += 1023) {
+            socket->writeDatagram(bits+i, (640 * 480*3-i) > 1023 ? 1023: (640 * 480*3-i), QHostAddress("127.0.0.1"), 8080);
         }
-        camera->img->save("./1.png");
+//        while(tt++ < 100000000);
+        tt = 0;
+//        camera->img->save("./1.png");
     }
     QImage *t = new QImage("test.png");
     if(!t->isNull())
@@ -44,7 +47,7 @@ void MainWindow::display() {
 
 void MainWindow::initSocket() {
     socket = new QUdpSocket(this);
-    socket->bind(QHostAddress("127.0.0.1"), 8080);
+    socket->bind(QHostAddress("127.0.0.1"), 3000);
     connect(socket, SIGNAL(readyRead()), this, SLOT(process()));
 
 }
